@@ -1,0 +1,847 @@
+// converted by version 1.3
+// on Sun Jul 14 14:19:59 CEST 2013
+
+.package at/fhooe/usmile/rsa1024 {
+	.aid 0x1:0x2:0x3:0x4:0x5:0x4:0x0:0x0;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.3;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x2 1.3;		//javacard/security
+		0xA0:0x0:0x0:0x0:0x62:0x2:0x1 1.3;		//javacardx/crypto
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+	}
+
+	.applet {
+		0x1:0x2:0x3:0x4:0x5:0x4:0x0:0x1 RSA1024;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef 1.7 RSA1024/rsaCrtPrivateKey;
+		// 1
+		instanceFieldRef 1.9 RSA1024/rsaOwnPublicKey;
+		// 2
+		instanceFieldRef 1.9 RSA1024/rsaExtPublicKey;
+		// 3
+		instanceFieldRef byte[] RSA1024/defaultExp;
+		// 4
+		instanceFieldRef 1.15 RSA1024/signature;
+		// 5
+		instanceFieldRef 2.1 RSA1024/rsaCipher;
+		// 6
+		instanceFieldRef byte[] RSA1024/signatureBuffer;
+		// 7
+		instanceFieldRef 1.10 RSA1024/desKey;
+		// 8
+		instanceFieldRef 2.1 RSA1024/cipher;
+		// 9
+		instanceFieldRef byte[] RSA1024/IV;
+		// 10
+		instanceFieldRef 1.16 RSA1024/keyPair;
+		// 11
+		staticMethodRef 1.13.0(BSZ)Ljavacard/security/Key;;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 12
+		staticMethodRef 0.8.13(SB)[B;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+		// 13
+		classRef 1.7;		// javacard/security/RSAPrivateCrtKey
+		// 14
+		classRef 1.10;		// javacard/security/DESKey
+		// 15
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 16
+		staticMethodRef 1.15.0(BZ)Ljavacard/security/Signature;;		// javacard/security/Signature.getInstance(BZ)Ljavacard/security/Signature;
+			.descriptor	Ljavacard/security/Signature;	1.15;
+
+		// 17
+		classRef 1.9;		// javacard/security/RSAPublicKey
+		// 18
+		classRef RSA1024;
+		// 19
+		staticMethodRef RSA1024/<init>()V;
+		// 20
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 21
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 22
+		virtualMethodRef 0.10.1()[B;		// getBuffer()[B
+		// 23
+		virtualMethodRef RSA1024/generateKeyPair()V;
+		// 24
+		virtualMethodRef RSA1024/sign(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 25
+		virtualMethodRef RSA1024/verify(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 26
+		virtualMethodRef RSA1024/encrypt_RSA(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 27
+		virtualMethodRef RSA1024/decrypt_RSA(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 28
+		virtualMethodRef RSA1024/getPublicModulus(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 29
+		virtualMethodRef RSA1024/getPublicExponent(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 30
+		virtualMethodRef RSA1024/setModulus(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 31
+		virtualMethodRef RSA1024/setExponent(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 32
+		virtualMethodRef RSA1024/encrypt3DES(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 33
+		virtualMethodRef RSA1024/decrypt3DES(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 34
+		staticMethodRef 0.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 35
+		virtualMethodRef 0.10.6()S;		// setIncomingAndReceive()S
+		// 36
+		virtualMethodRef 2.1.4(Ljavacard/security/Key;B[BSS)V;		// init(Ljavacard/security/Key;B[BSS)V
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 37
+		virtualMethodRef 2.1.1([BSS[BS)S;		// doFinal([BSS[BS)S
+		// 38
+		virtualMethodRef 0.10.8(SS)V;		// setOutgoingAndSend(SS)V
+		// 39
+		classRef 1.16;		// javacard/security/KeyPair
+		// 40
+		staticMethodRef 1.16.0(BS)V;		// javacard/security/KeyPair.<init>(BS)V
+		// 41
+		staticMethodRef 2.1.0(BZ)Ljavacardx/crypto/Cipher;;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+			.descriptor	Ljavacardx/crypto/Cipher;	2.1;
+
+		// 42
+		virtualMethodRef 1.16.1()V;		// genKeyPair()V
+		// 43
+		virtualMethodRef 1.16.2()Ljavacard/security/PrivateKey;;		// getPrivate()Ljavacard/security/PrivateKey;
+			.descriptor	Ljavacard/security/PrivateKey;	1.2;
+
+		// 44
+		virtualMethodRef 1.16.3()Ljavacard/security/PublicKey;;		// getPublic()Ljavacard/security/PublicKey;
+			.descriptor	Ljavacard/security/PublicKey;	1.3;
+
+		// 45
+		virtualMethodRef 2.1.3(Ljavacard/security/Key;B)V;		// init(Ljavacard/security/Key;B)V
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 46
+		virtualMethodRef 1.15.3(Ljavacard/security/Key;B)V;		// init(Ljavacard/security/Key;B)V
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 47
+		virtualMethodRef 1.15.5([BSS[BS)S;		// sign([BSS[BS)S
+		// 48
+		staticMethodRef 0.16.2([BS[BSS)S;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+		// 49
+		virtualMethodRef 1.15.7([BSS[BSS)Z;		// verify([BSS[BSS)Z
+	}
+
+	.class public RSA1024 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			 1.7 rsaCrtPrivateKey 0;		// Ljavacard/security/RSAPrivateCrtKey;
+			 1.9 rsaOwnPublicKey 1;		// Ljavacard/security/RSAPublicKey;
+			 1.9 rsaExtPublicKey 2;		// Ljavacard/security/RSAPublicKey;
+			 2.1 rsaCipher 3;		// Ljavacardx/crypto/Cipher;
+			 1.16 keyPair 4;		// Ljavacard/security/KeyPair;
+			 1.15 signature 5;		// Ljavacard/security/Signature;
+			 byte[] signatureBuffer 6;		// [B
+			 byte[] defaultExp 7;		// [B
+			 1.10 desKey 8;		// Ljavacard/security/DESKey;
+			 2.1 cipher 9;		// Ljavacardx/crypto/Cipher;
+			 byte[] IV 10;		// [B
+			static final byte CLA = -128;		// B
+			static final byte PIN_VERIFY = 32;		// B
+			static final byte ENCRYPT_RSA = 65;		// B
+			static final byte DECRYPT_RSA = 66;		// B
+			static final byte SIGN = 67;		// B
+			static final byte UPDATE_TOBE_VERIFIED = 68;		// B
+			static final byte VERIFY = 69;		// B
+			static final byte GET_MODULUS = 70;		// B
+			static final byte GET_EXPONENT = 71;		// B
+			static final byte SET_MODULUS = 72;		// B
+			static final byte SET_EXPONENT = 73;		// B
+			static final byte ENCRYPT_3DES = 81;		// B
+			static final byte DECRYPT_3DES = 82;		// B
+			static final byte PIN_LENGTH = 6;		// B
+			static final byte PIN_TRY = 3;		// B
+			static final short PIN_LENGTH_ERROR = 16;		// S
+			static final short PIN_VERIFICATION_FAILED = 25344;		// S
+			static final short PIN_REQUIRED = 20;		// S
+			static final short PIN_BLOCKED = 18;		// S
+			static final short SIGNATURE_VERIFICATION_FAILED = 19;		// S
+			static final short SIGNATURE_LENGTH_INVALID = 21;		// S
+			static final short MODULUS_LENGTH_ERROR = 22;		// S
+			static final short EXPONENT_LENGTH_ERROR = 23;		// S
+			static final byte GEN_KEYPAIR = 33;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			encrypt3DES(Ljavacard/framework/APDU;)V;
+			decrypt3DES(Ljavacard/framework/APDU;)V;
+			generateKeyPair()V;
+			encrypt_RSA(Ljavacard/framework/APDU;)V;
+			getPublicModulus(Ljavacard/framework/APDU;)V;
+			getPublicExponent(Ljavacard/framework/APDU;)V;
+			setModulus(Ljavacard/framework/APDU;)V;
+			setExponent(Ljavacard/framework/APDU;)V;
+			decrypt_RSA(Ljavacard/framework/APDU;)V;
+			sign(Ljavacard/framework/APDU;)V;
+			verify(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method private <init>()V {
+			.stack 5;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 15;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					bspush 6;
+					sspush 1024;
+					sconst_0;
+					invokestatic 11;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 13;		// T_CLASSORINTERFACE javacard/security/RSAPrivateCrtKey
+					putfield_a 0;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaCrtPrivateKey
+					aload_0;
+					sconst_4;
+					sspush 1024;
+					sconst_0;
+					invokestatic 11;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 17;		// T_CLASSORINTERFACE javacard/security/RSAPublicKey
+					putfield_a 1;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaOwnPublicKey
+					aload_0;
+					sconst_4;
+					sspush 1024;
+					sconst_0;
+					invokestatic 11;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 17;		// T_CLASSORINTERFACE javacard/security/RSAPublicKey
+					putfield_a 2;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaExtPublicKey
+					aload_0;
+					sconst_3;
+					newarray 11;
+					dup;
+					sconst_0;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_2;
+					sconst_1;
+					bastore;
+					putfield_a 3;		// reference at/fhooe/usmile/rsa1024/RSA1024.defaultExp
+					aload_0;
+					bspush 10;
+					sconst_0;
+					invokestatic 16;		// javacard/security/Signature.getInstance(BZ)Ljavacard/security/Signature;
+					putfield_a 4;		// reference at/fhooe/usmile/rsa1024/RSA1024.signature
+					aload_0;
+					bspush 10;
+					sconst_0;
+					invokestatic 41;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+					putfield_a 5;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaCipher
+					aload_0;
+					sspush 128;
+					sconst_2;
+					invokestatic 12;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 6;		// reference at/fhooe/usmile/rsa1024/RSA1024.signatureBuffer
+					aload_0;
+					sconst_3;
+					sspush 192;
+					sconst_0;
+					invokestatic 11;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 14;		// T_CLASSORINTERFACE javacard/security/DESKey
+					putfield_a 7;		// reference at/fhooe/usmile/rsa1024/RSA1024.desKey
+					aload_0;
+					sconst_1;
+					sconst_0;
+					invokestatic 41;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+					putfield_a 8;		// reference at/fhooe/usmile/rsa1024/RSA1024.cipher
+					aload_0;
+					bspush 9;
+					newarray 11;
+					dup;
+					sconst_1;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_2;
+					sconst_2;
+					bastore;
+					dup;
+					sconst_3;
+					sconst_3;
+					bastore;
+					dup;
+					sconst_4;
+					sconst_4;
+					bastore;
+					dup;
+					sconst_5;
+					sconst_4;
+					bastore;
+					dup;
+					bspush 6;
+					sconst_5;
+					bastore;
+					dup;
+					bspush 7;
+					bspush 6;
+					bastore;
+					dup;
+					bspush 8;
+					bspush 7;
+					bastore;
+					putfield_a 9;		// reference at/fhooe/usmile/rsa1024/RSA1024.IV
+					bspush 27;
+					newarray 11;
+					dup;
+					sconst_1;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_2;
+					sconst_2;
+					bastore;
+					dup;
+					sconst_3;
+					sconst_3;
+					bastore;
+					dup;
+					sconst_4;
+					sconst_4;
+					bastore;
+					dup;
+					sconst_5;
+					sconst_4;
+					bastore;
+					dup;
+					bspush 6;
+					sconst_5;
+					bastore;
+					dup;
+					bspush 7;
+					bspush 6;
+					bastore;
+					dup;
+					bspush 8;
+					bspush 7;
+					bastore;
+					dup;
+					bspush 10;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 11;
+					sconst_2;
+					bastore;
+					dup;
+					bspush 12;
+					sconst_3;
+					bastore;
+					dup;
+					bspush 13;
+					sconst_4;
+					bastore;
+					dup;
+					bspush 14;
+					sconst_4;
+					bastore;
+					dup;
+					bspush 15;
+					sconst_5;
+					bastore;
+					dup;
+					bspush 16;
+					bspush 6;
+					bastore;
+					dup;
+					bspush 17;
+					bspush 7;
+					bastore;
+					dup;
+					bspush 19;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 20;
+					sconst_2;
+					bastore;
+					dup;
+					bspush 21;
+					sconst_3;
+					bastore;
+					dup;
+					bspush 22;
+					sconst_4;
+					bastore;
+					dup;
+					bspush 23;
+					sconst_4;
+					bastore;
+					dup;
+					bspush 24;
+					sconst_5;
+					bastore;
+					dup;
+					bspush 25;
+					bspush 6;
+					bastore;
+					dup;
+					bspush 26;
+					bspush 7;
+					bastore;
+					astore_1;
+					getfield_a_this 7;		// reference at/fhooe/usmile/rsa1024/RSA1024.desKey
+					aload_1;
+					sconst_0;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					return;
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 18;		// at/fhooe/usmile/rsa1024/RSA1024
+					dup;
+					invokespecial 19;		// at/fhooe/usmile/rsa1024/RSA1024.<init>()V
+					invokevirtual 20;		// register()V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 21;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 22;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L14 11 33 L3 65 L6 66 L7 67 L4 69 L5 70 L8 71 L9 72 L10 73 L11 81 L12 82 L13;
+				L3:	aload_0;
+					invokevirtual 23;		// generateKeyPair()V
+					goto L15;
+				L4:	aload_0;
+					aload_1;
+					invokevirtual 24;		// sign(Ljavacard/framework/APDU;)V
+					goto L15;
+				L5:	aload_0;
+					aload_1;
+					invokevirtual 25;		// verify(Ljavacard/framework/APDU;)V
+					goto L15;
+				L6:	aload_0;
+					aload_1;
+					invokevirtual 26;		// encrypt_RSA(Ljavacard/framework/APDU;)V
+					goto L15;
+				L7:	aload_0;
+					aload_1;
+					invokevirtual 27;		// decrypt_RSA(Ljavacard/framework/APDU;)V
+					goto L15;
+				L8:	aload_0;
+					aload_1;
+					invokevirtual 28;		// getPublicModulus(Ljavacard/framework/APDU;)V
+					goto L15;
+				L9:	aload_0;
+					aload_1;
+					invokevirtual 29;		// getPublicExponent(Ljavacard/framework/APDU;)V
+					goto L15;
+				L10:	aload_0;
+					aload_1;
+					invokevirtual 30;		// setModulus(Ljavacard/framework/APDU;)V
+					goto L15;
+				L11:	aload_0;
+					aload_1;
+					invokevirtual 31;		// setExponent(Ljavacard/framework/APDU;)V
+					goto L15;
+				L12:	aload_0;
+					aload_1;
+					invokevirtual 32;		// encrypt3DES(Ljavacard/framework/APDU;)V
+					goto L15;
+				L13:	aload_0;
+					aload_1;
+					invokevirtual 33;		// decrypt3DES(Ljavacard/framework/APDU;)V
+					goto L15;
+				L14:	sspush 27904;
+					invokestatic 34;		// javacard/framework/ISOException.throwIt(S)V
+				L15:	return;
+		}
+
+		.method public encrypt3DES(Ljavacard/framework/APDU;)V 8 {
+			.stack 6;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 22;		// getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 35;		// setIncomingAndReceive()S
+					sstore_3;
+					sload_3;
+					bspush 8;
+					srem;
+					ifeq L2;
+				L1:	sspush 26368;
+					invokestatic 34;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	getfield_a_this 8;		// reference at/fhooe/usmile/rsa1024/RSA1024.cipher
+					getfield_a_this 7;		// reference at/fhooe/usmile/rsa1024/RSA1024.desKey
+					sconst_2;
+					getfield_a_this 9;		// reference at/fhooe/usmile/rsa1024/RSA1024.IV
+					sconst_0;
+					bspush 8;
+					invokevirtual 36;		// init(Ljavacard/security/Key;B[BSS)V
+					getfield_a_this 8;		// reference at/fhooe/usmile/rsa1024/RSA1024.cipher
+					aload_2;
+					sconst_5;
+					sload_3;
+					aload_2;
+					sconst_5;
+					invokevirtual 37;		// doFinal([BSS[BS)S
+					pop;
+					aload_1;
+					sconst_5;
+					sload_3;
+					invokevirtual 38;		// setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method public decrypt3DES(Ljavacard/framework/APDU;)V 9 {
+			.stack 6;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 22;		// getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 35;		// setIncomingAndReceive()S
+					sstore_3;
+					sload_3;
+					bspush 8;
+					srem;
+					ifeq L2;
+				L1:	sspush 26368;
+					invokestatic 34;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	getfield_a_this 8;		// reference at/fhooe/usmile/rsa1024/RSA1024.cipher
+					getfield_a_this 7;		// reference at/fhooe/usmile/rsa1024/RSA1024.desKey
+					sconst_1;
+					getfield_a_this 9;		// reference at/fhooe/usmile/rsa1024/RSA1024.IV
+					sconst_0;
+					bspush 8;
+					invokevirtual 36;		// init(Ljavacard/security/Key;B[BSS)V
+					getfield_a_this 8;		// reference at/fhooe/usmile/rsa1024/RSA1024.cipher
+					aload_2;
+					sconst_5;
+					sload_3;
+					aload_2;
+					sconst_5;
+					invokevirtual 37;		// doFinal([BSS[BS)S
+					pop;
+					aload_1;
+					sconst_5;
+					sload_3;
+					invokevirtual 38;		// setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method public generateKeyPair()V 10 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					new 39;		// javacard/security/KeyPair
+					dup;
+					sconst_2;
+					sspush 1024;
+					invokespecial 40;		// javacard/security/KeyPair.<init>(BS)V
+					putfield_a 10;		// reference at/fhooe/usmile/rsa1024/RSA1024.keyPair
+					getfield_a_this 10;		// reference at/fhooe/usmile/rsa1024/RSA1024.keyPair
+					invokevirtual 42;		// genKeyPair()V
+					aload_0;
+					getfield_a_this 10;		// reference at/fhooe/usmile/rsa1024/RSA1024.keyPair
+					invokevirtual 43;		// getPrivate()Ljavacard/security/PrivateKey;
+					checkcast 0 13;		// T_CLASSORINTERFACE javacard/security/RSAPrivateCrtKey
+					putfield_a 0;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaCrtPrivateKey
+					aload_0;
+					getfield_a_this 10;		// reference at/fhooe/usmile/rsa1024/RSA1024.keyPair
+					invokevirtual 44;		// getPublic()Ljavacard/security/PublicKey;
+					checkcast 0 17;		// T_CLASSORINTERFACE javacard/security/RSAPublicKey
+					putfield_a 1;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaOwnPublicKey
+					return;
+		}
+
+		.method public encrypt_RSA(Ljavacard/framework/APDU;)V 11 {
+			.stack 6;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 22;		// getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 35;		// setIncomingAndReceive()S
+					sstore_3;
+					getfield_a_this 5;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaCipher
+					getfield_a_this 2;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaExtPublicKey
+					sconst_2;
+					invokevirtual 45;		// init(Ljavacard/security/Key;B)V
+					getfield_a_this 5;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaCipher
+					aload_2;
+					sconst_5;
+					sload_3;
+					aload_2;
+					sconst_5;
+					invokevirtual 37;		// doFinal([BSS[BS)S
+					sstore 4;
+					aload_1;
+					sconst_5;
+					sload 4;
+					invokevirtual 38;		// setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method public getPublicModulus(Ljavacard/framework/APDU;)V 12 {
+			.stack 3;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 22;		// getBuffer()[B
+					astore_2;
+					getfield_a_this 1;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaOwnPublicKey
+					aload_2;
+					sconst_5;
+					invokeinterface 3 17 5;		// javacard/security/RSAPublicKey
+					sstore_3;
+					aload_1;
+					sconst_5;
+					sload_3;
+					invokevirtual 38;		// setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method public getPublicExponent(Ljavacard/framework/APDU;)V 13 {
+			.stack 3;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 22;		// getBuffer()[B
+					astore_2;
+					getfield_a_this 1;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaOwnPublicKey
+					aload_2;
+					sconst_5;
+					invokeinterface 3 17 4;		// javacard/security/RSAPublicKey
+					sstore_3;
+					aload_1;
+					sconst_5;
+					sload_3;
+					invokevirtual 38;		// setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method public setModulus(Ljavacard/framework/APDU;)V 14 {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 22;		// getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 35;		// setIncomingAndReceive()S
+					sstore_3;
+					sload_3;
+					sspush 128;
+					if_scmpge L2;
+				L1:	bspush 22;
+					invokestatic 34;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	getfield_a_this 2;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaExtPublicKey
+					aload_2;
+					sconst_5;
+					sload_3;
+					invokeinterface 4 17 7;		// javacard/security/RSAPublicKey
+					getfield_a_this 2;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaExtPublicKey
+					getfield_a_this 3;		// reference at/fhooe/usmile/rsa1024/RSA1024.defaultExp
+					sconst_0;
+					sconst_3;
+					invokeinterface 4 17 6;		// javacard/security/RSAPublicKey
+					return;
+		}
+
+		.method public setExponent(Ljavacard/framework/APDU;)V 15 {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 22;		// getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 35;		// setIncomingAndReceive()S
+					sstore_3;
+					sload_3;
+					sconst_1;
+					if_scmpge L2;
+				L1:	bspush 23;
+					invokestatic 34;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	getfield_a_this 2;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaExtPublicKey
+					aload_2;
+					sconst_5;
+					sload_3;
+					invokeinterface 4 17 6;		// javacard/security/RSAPublicKey
+					return;
+		}
+
+		.method public decrypt_RSA(Ljavacard/framework/APDU;)V 16 {
+			.stack 6;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	getfield_a_this 5;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaCipher
+					getfield_a_this 0;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaCrtPrivateKey
+					sconst_1;
+					invokevirtual 45;		// init(Ljavacard/security/Key;B)V
+					aload_1;
+					invokevirtual 22;		// getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 35;		// setIncomingAndReceive()S
+					sstore_3;
+					getfield_a_this 5;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaCipher
+					aload_2;
+					sconst_5;
+					sload_3;
+					aload_2;
+					sconst_5;
+					invokevirtual 37;		// doFinal([BSS[BS)S
+					sstore 4;
+					aload_1;
+					sconst_5;
+					sload 4;
+					invokevirtual 38;		// setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method public sign(Ljavacard/framework/APDU;)V 17 {
+			.stack 6;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 22;		// getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 35;		// setIncomingAndReceive()S
+					sstore_3;
+					getfield_a_this 4;		// reference at/fhooe/usmile/rsa1024/RSA1024.signature
+					getfield_a_this 0;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaCrtPrivateKey
+					sconst_1;
+					invokevirtual 46;		// init(Ljavacard/security/Key;B)V
+					getfield_a_this 4;		// reference at/fhooe/usmile/rsa1024/RSA1024.signature
+					aload_2;
+					sconst_5;
+					sload_3;
+					getfield_a_this 6;		// reference at/fhooe/usmile/rsa1024/RSA1024.signatureBuffer
+					sconst_0;
+					invokevirtual 47;		// sign([BSS[BS)S
+					pop;
+					getfield_a_this 6;		// reference at/fhooe/usmile/rsa1024/RSA1024.signatureBuffer
+					sconst_0;
+					aload_2;
+					sconst_5;
+					sspush 128;
+					invokestatic 48;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					sspush 128;
+					invokevirtual 38;		// setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method public verify(Ljavacard/framework/APDU;)V 18 {
+			.stack 7;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 22;		// getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 35;		// setIncomingAndReceive()S
+					sstore_3;
+					getfield_a_this 4;		// reference at/fhooe/usmile/rsa1024/RSA1024.signature
+					getfield_a_this 2;		// reference at/fhooe/usmile/rsa1024/RSA1024.rsaExtPublicKey
+					sconst_2;
+					invokevirtual 46;		// init(Ljavacard/security/Key;B)V
+					getfield_a_this 4;		// reference at/fhooe/usmile/rsa1024/RSA1024.signature
+					aload_2;
+					sspush 133;
+					sload_3;
+					sspush 128;
+					ssub;
+					aload_2;
+					sconst_5;
+					sspush 128;
+					invokevirtual 49;		// verify([BSS[BSS)Z
+					sstore 4;
+					sload 4;
+					ifeq L2;
+				L1:	return;
+				L2:	bspush 19;
+					invokestatic 34;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+		}
+
+	}
+
+}
