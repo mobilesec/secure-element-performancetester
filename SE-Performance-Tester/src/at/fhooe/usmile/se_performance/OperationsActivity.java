@@ -33,8 +33,6 @@ public class OperationsActivity extends Activity implements OnItemClickListener 
 		
 		
 		listviewTestOperations.setOnItemClickListener(this);
-		
-		 
 	}
 
 	@Override
